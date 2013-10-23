@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Manga Performer Demo</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body lang="en-x-Test" dir="ltr">
+	...
+
+	<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+	<script src="bower_components/jquery/jquery.js"></script>
+	<script src="bower_components/jquery.hotkeys/jquery.hotkeys.js"></script>
+	<script src="bower_components/hammerjs/dist/jquery.hammer.js"></script>
+	<script src="bower_components/mangaperformer/dist/mangaperformer.js"></script>
+	<script>
+	(function( $, _, M ) {
+		M.BASE = 'bower_components/mangaperformer/dist/';
+
+		M.registerDataExtractor( 'json', function( data ) {
+			var list = this.pages,
+				pairs = this.pagePairs;
+
+			if ( 'dir' in data ) {
+				this.rtl = ( data.dir === 'rtl' );
+			}
+			if ( 'title' in data ) {
+				this.title = data.title;
+			}
+
+			var lastPair;
+			_( data.pages ).each( function( pageData ) {
+				var page = new M.Page;
+				page.src = pageData.src;
+				page.thumb = pageData.thumb;
+				page.num = pageData.page;
+				list.add( page );
+
+				if ( !lastPair || !pageData.subsequentPage ) {
+					lastPair = new M.PagePair;
+					pairs.add( lastPair );
+				}
+				lastPair.add( page );
+			} );
+		} );
+
+		var manga = new M.Manga( { dir: 'ltr' } );
+		manga.extractMangaData( 'json', {
+			dir: 'ltr',
+			title: "Ubunchu Chapter 1 (LTR)",
+			pages: [
+				{
+					src: 'comics/ubunchu-01-ltr/000.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/000.jpg',
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/001.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/001.jpg',
+					page: 1
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/002.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/002.jpg',
+					page: 2,
+					subsequentPage: true
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/003.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/003.jpg',
+					page: 3
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/004.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/004.jpg',
+					page: 4,
+					subsequentPage: true
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/005.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/005.jpg',
+					page: 5
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/006.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/006.jpg',
+					page: 6,
+					subsequentPage: true
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/007.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/007.jpg',
+					page: 7
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/008.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/008.jpg',
+					page: 8,
+					subsequentPage: true
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/009.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/009.jpg',
+					page: 9
+				},
+				{
+					src: 'comics/ubunchu-01-ltr/010.jpg',
+					thumb: 'comics/thumbs/ubunchu-01-ltr/010.jpg',
+					page: 10,
+					subsequentPage: true
+				}
+			]
+		} );
+		manga.play();
+
+	})( jQuery, _, MangaPerformer );
+	</script>
+</body>
+</html>

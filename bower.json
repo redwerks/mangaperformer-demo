@@ -1,0 +1,34 @@
+{
+  "name": "mangaperformer-demo",
+  "description": "A demo for the Manga Performer library.",
+  "version": "0.0.0-demo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redwerks/mangaperformer-demo.git"
+  },
+  "authors": [
+    {
+      "name": "Redwerks Systems Inc.",
+      "homepage": "http://redwerks.org/"
+    },
+    {
+      "name": "Daniel Friesen",
+      "email": "daniel@nadir-seen-fire.com",
+      "homepage": "http://danielfriesen.name/"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "mangaperformer": "*",
+    "lodash": "*",
+    "jquery": "#1",
+    "jquery.hotkeys": "jeresig/jquery.hotkeys#*",
+    "hammerjs": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true
+}
