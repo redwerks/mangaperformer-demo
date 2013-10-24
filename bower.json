@@ -17,7 +17,7 @@
       "homepage": "http://danielfriesen.name/"
     }
   ],
-  "license": "MIT",
+  "license": "https://creativecommons.org/licenses/by-nc/3.0/",
   "dependencies": {
     "mangaperformer": "*",
     "lodash": "*",

@@ -13,11 +13,13 @@
       "url": "http://danielfriesen.name/"
     }
   ],
-  "license": "MIT",
-  "devDependencies": {},
-  "private": true,
+  "license": {
+    "type": "CC-BY-NC 3.0",
+    "url": "https://creativecommons.org/licenses/by-nc/3.0/"
+  },
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-connect": "~0.5.0"
-  }
+  },
+  "private": true
 }
