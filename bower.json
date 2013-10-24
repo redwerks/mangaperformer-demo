@@ -2,6 +2,7 @@
   "name": "mangaperformer-demo",
   "description": "A demo for the Manga Performer library.",
   "version": "0.0.0-demo",
+  "homepage": "http://mangaperformer.redwerks.org/demo/",
   "repository": {
     "type": "git",
     "url": "https://github.com/redwerks/mangaperformer-demo.git"

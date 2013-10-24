@@ -2,6 +2,7 @@
   "name": "mangaperformer-demo",
   "description": "A demo for the Manga Performer library.",
   "version": "0.0.0-demo",
+  "homepage": "http://mangaperformer.redwerks.org/demo/",
   "author": {
     "name": "Redwerks Systems Inc.",
     "url": "http://redwerks.org/"
