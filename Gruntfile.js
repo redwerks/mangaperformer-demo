@@ -14,6 +14,13 @@ module.exports = function(grunt) {
 					port: 8888,
 					open: true
 				}
+			},
+			public_server: {
+				options: {
+					keepalive: true,
+					hostname: '*',
+					port: 8888
+				}
 			}
 		}
 	});
@@ -21,5 +28,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	grunt.registerTask('server', ['connect:server']);
+	grunt.registerTask('server:public', ['connect:public_server']);
 
 };
