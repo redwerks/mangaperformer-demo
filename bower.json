@@ -24,7 +24,7 @@
     "lodash": "*",
     "jquery": "#^1.8",
     "jquery.hotkeys": "jeresig/jquery.hotkeys#*",
-    "hammerjs": "*"
+    "jquery-hammerjs": "*"
   },
   "ignore": [
     "**/.*",
